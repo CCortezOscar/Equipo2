@@ -1,0 +1,165 @@
+#include <iostream>
+#include<cstdlib>
+#include<conio.h>
+#ifdef _WIN32
+  #include<windows.h>
+#endif 
+
+using namespace std;
+
+void limpiar_pantalla()
+{
+  #ifdef _WIN32
+    system("cls");
+  #else
+    system("clear");
+  #endif
+}
+
+//Desarrolla una función que muestre un menú el cual contendra las siguientes opciones:
+//a capturar nombre
+//b capturar telefono
+//c capturar dirección
+//e capturar email
+//i imprimir
+// la función debe mostrar los datos capturados en orden, Nombre, Telefono, Direccion y email.
+void funcion1() {
+    
+    cout << "Estoy en la funcion 1" <<"\n";    
+}
+
+
+//Escribe una función para que dada una cadena ingresada por el usuario esta sustituya todas las vocales
+//por una letra "c"
+//Ejemplo: "estoy en clase de programacion" ---> "cstcy cn clcsc dc prcgrcmccccn"
+//Ojo: debe contar con una opción para salir y regresar al menú principal
+void sustituir() {
+    // multiplicar todos los elementos del arreglo y devolver el producto
+    // Escribe tu código aquí:
+    char salir;
+    do{
+        limpiar_pantalla();
+
+        cout << "\n \n" << "Para repetir presione cualquier tecla, para regresar al MENU principal presione \'s\' minuscula:_ ";
+        cin >> salir;
+        
+    }while(salir != 's');    
+
+}
+
+
+//esta funcion debe llamar a una funcion que se llamará diaDeLaSemana la cual recibirá un número
+//que representa el dia de la semana, la función diaDeLaSemana debe retornar:
+//Sabado si el número recibido fue 1
+//Domingo si el número recibido fue 2
+//Lunes si el número recibido fue 3
+//Martes si el número recibido fue 4
+//Miercoles si el número recibido fue 5
+//Jueves si el número recibido fue 6
+//Viernes si el número recibido fue 7
+//No debe cambiar el nombre de la funcion4, la funcion 4 debe retornar el siguiente mensaje
+//"Hoy es" + el dia de la semana retornado por la función "diaDeLaSemana"
+//Ojo: debe contar con una opción para salir y regresar al menú principal o bien regresar y repetir el proceso
+void funcion4(void){
+    cout << "Estoy en la funcion 4" <<"\n";
+    
+}
+
+
+//Dado un array que contiene algunos meses del año desordenados, pedir al usuario que capture dos meses
+// para buscarlos, si estos son encontrados devolver "Fueron encontrados" de lo contrario
+//Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
+// Tu código:
+void mesesDelAño() {
+    string meses[]= {"Enero","Diciembre","Marzo","Febrero","Octubre","Noviembre"};
+
+}
+
+
+//esta función Lee dos números (desde el teclado) y muestra en pantalla los números comprendidos entre ambos. 
+//Tenga en cuenta que no se sabe cual de los números es mayor (pueden leerse en cualquier orden).
+//Ejemplo num1 = 2, num2 = 10 ---->  3, 4, 5, 6, 7, 8, 9
+//Ojo: debe contar con una opción para salir y regresar al menú principal o bien regresar y repetir el proceso
+void funcion5(void){
+    cout << "Estoy en la funcion 5" <<"\n";
+    
+}
+
+
+//esta función pide intriducir un texto al usuario y debe contar cuantas vocales y consonantes tiene
+//mostrando el resultado :
+//ejemplo: "Hola" ---> Vocales: 2 Consonantes: 2
+//Ojo: debe contar con una opción para salir y regresar al menú principal o bien regresar y repetir el proceso
+void funcion6(void){
+    cout << "Estoy en la funcion 6" <<"\n";
+    
+}
+
+
+//Esta función debe llamarse Dibuja, la cual debe dibujar un triangulo de la siguiente forma
+//  *
+//  ***
+//  *****
+//  *******
+//  *********
+//  *******
+//  *****
+//  ***
+//  *
+//Deberas usuar un ciclo for para imprimir las lineas
+//Ojo: debe contar con una opción para salir y regresar al menú principal o bien regresar y repetir el proceso
+void funcion7(void){
+    int i;
+    char salir;
+    do{
+        for(i=1;i<6;i++){
+        cout << "*";        
+        cout << "\n \n" << "Para repetir presione cualquier tecla, para regresar al MENU principal presione \'s\' minuscula:_ ";
+        cin >> salir;
+    }while(salir != 's');
+    
+}
+
+
+int main()
+{
+
+    int opc = 0;
+    do{
+        limpiar_pantalla();
+        cout << "*********************** MENU PRINCIPAL *****************************\n\n\n\n\n";
+        cout << "1 Compara\n";
+        cout << "2 Inverso String\n";
+        cout << "3 Tablas de Multiplicar\n";
+        cout << "4 Calculas IMC\n";
+        cout << "0 Salir\n";
+        cout << "\n\n\nSelecciona alguna opción:_ ";
+        cin >> opc;
+        switch(opc){
+            case 1:
+                funcion1();
+                break;
+            case 2:
+                inversoStr();
+                break;
+            case 3:
+                funcion3();
+                break;
+            case 4:
+//                numberOfCharacters();
+                break;
+            case 5:
+                // funcion5();
+                break;
+            case 6:
+                funcion6();
+                break;
+            case 7:
+                funcion7();
+                break;
+
+        }
+    }while(opc != 0);
+
+    return 0;
+}
